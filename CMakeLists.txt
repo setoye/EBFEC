@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.7 FATAL_ERROR)
+set(NAME EBFEC)
+project(${NAME})
+set (CMAKE_CXX_STANDARD 17)
+#enable build test.
+option(BUILD_TEST "Build tests" on)
+if(BUILD_TEST)
+    add_executable(test_case include/bitmask.hpp test/test.cpp)
+    target_include_directories(test_case PUBLIC ${PROJECT_SOURCE_DIR}/include)
+endif()
